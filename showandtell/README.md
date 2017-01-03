@@ -32,19 +32,6 @@ The above command will results:
          * Debugger is active!
          * Debugger pin code: 164-368-744
      
-CONFIGURE IM2TXT SERVICE
-========================
-   
-In the AEM Configuration console, http://localhost:4502/system/console/configMgr
-Find the service name 'Im2txt Configuration Service'
-Edit the im2txt.service.endpoint = http://0.0.0.0:5000/im2txt   
-
-*NOTE: Endpoint consists of <PROTOCOL://HOST:PORT/PATH>
-
-
-Make sure to match this property with the machine details where the im2txt model is trained.
-
-
 INFO
 =====
 
