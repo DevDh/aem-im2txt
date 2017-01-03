@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/aemsamples"/>
+    <filter root="/apps/cq/reporting"/>
+    <filter root="/libs/cq/reporting/components/auditreport"/>
+    <filter root="/libs/cq/reporting"/>
+    <filter root="/etc/designs/reports/authorsreport" />
+</workspaceFilter>
