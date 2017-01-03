@@ -26,7 +26,8 @@ From the showandtell directory, add the following files accordingly:
 
     python image_generator_rest.py
     
-The above command will results:
+    In my case, the above command resulted like:
+         
          * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
          * Restarting with stat
          * Debugger is active!
