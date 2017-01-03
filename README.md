@@ -1,5 +1,5 @@
-IM2TXT AEM
-===========
+AEM IM2TXT
+==========
 
 This AEM project is to provide the capability to generate the Image Captions using the AEM workflows.
 The following provides the details:
