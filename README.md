@@ -23,6 +23,8 @@ REST API
 ========
 
     To setup the im2txt's model, refer the README.md inside showandtell directory 
+    
+    https://github.com/DevDh/aem-im2txt/blob/master/showandtell/README.md
          
                   
 BUILD
