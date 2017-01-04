@@ -22,9 +22,8 @@ PREREQUISITES
 REST API
 ========
 
-    To setup the im2txt's model, refer the README.md inside showandtell directory 
+To setup the im2txt's model, refer the [im2txt README.md](showandtell/README.md). 
     
-    https://github.com/DevDh/aem-im2txt/blob/master/showandtell/README.md
          
                   
 BUILD
