@@ -24,7 +24,7 @@ From the showandtell directory, add the following files accordingly:
 
 2. Run the following command:
 
-    python image_generator_rest.py
+        python image_generator_rest.py
     
     In my case, the above command resulted like:
          
