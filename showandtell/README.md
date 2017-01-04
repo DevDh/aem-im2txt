@@ -32,6 +32,8 @@ From the showandtell directory, add the following files accordingly:
          * Restarting with stat
          * Debugger is active!
          * Debugger pin code: 164-368-744
+         
+   It means the Rest api can be accessed using http://0.0.0.0:5000/. This is what we will configure in AEM Config Service.       
      
 INFO
 =====

@@ -22,7 +22,7 @@ PREREQUISITES
 REST API
 ========
 
-    Read the README inside showandtell directory to setup the im2txt's model
+    To setup the im2txt's model, refer the README.md inside showandtell directory 
          
                   
 BUILD
@@ -40,9 +40,7 @@ Edit the im2txt.service.endpoint = http://0.0.0.0:5000/im2txt
 
 *NOTE: Endpoint consists of <PROTOCOL://HOST:PORT/PATH>
 
-
-
-Make sure to match this property with the machine details where the im2txt model is trained.
+** Refer : showandtell/README.md - REST API, for more details where the REST api is running.
 
 REVIEW THE WORKFLOW RESULTS
 ============================
@@ -53,7 +51,11 @@ For any DAM's image, this workflow step will add the generated captions (propert
  
 * Location of added captions
     
-      ASSET-NODE-PATH/jcr:content/metadata
+      ASSET-NODE-PATH
+                |
+            jcr:content
+                    |
+                  metadata
 
 For example, in my case, using the below link shows the newly added property with the value = generated captions.
 

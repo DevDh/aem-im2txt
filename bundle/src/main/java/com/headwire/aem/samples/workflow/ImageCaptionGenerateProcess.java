@@ -61,10 +61,10 @@ public class ImageCaptionGenerateProcess implements WorkflowProcess {
 			map.put("user.jcr.session", wfSession.getSession());
 
 			final Asset asset = getAssetFromPayload(workItem, wfSession.getSession());
-			String caption = generateCaption(asset);
+			String[] captions = generateCaption(asset);
 
 			//Add Captions to JCR Node
-			addToAssetMetadata(asset, wfSession.getSession(), "captions", caption);
+			addToAssetMetadata(asset, wfSession.getSession(), "captions", captions);
 
 		} catch (Exception e) {
 
@@ -73,15 +73,14 @@ public class ImageCaptionGenerateProcess implements WorkflowProcess {
 		}
 	}
 
-	private void addToAssetMetadata(Asset asset, Session session, String captionKey, String value) {
+	private void addToAssetMetadata(Asset asset, Session session, String captionKey, String[] values) {
 
 		try {
 
 			// Target Node
 			Node assetNode = asset.adaptTo(Node.class);
 			Node targetNode = assetNode.getNode("jcr:content/metadata");
-
-			targetNode.setProperty(captionKey, value);
+			targetNode.setProperty(captionKey, values);
 
 			// Save the session changes and log out
 			session.save();
@@ -99,7 +98,7 @@ public class ImageCaptionGenerateProcess implements WorkflowProcess {
 	 * @param asset
 	 * @return the generated captions returned by the im2txt service
 	 */
-	public String generateCaption(Asset asset) {
+	public String[] generateCaption(Asset asset) {
 
 		CloseableHttpClient client = HttpClients.createDefault();
 		HttpPost post = new HttpPost(im2txtConfigService.getIm2txtURL());
@@ -115,11 +114,15 @@ public class ImageCaptionGenerateProcess implements WorkflowProcess {
 		post.setEntity(entity);
 
 		String responseString = "";
+		String[] arr = null;
+
 		try {
 
 			HttpResponse response = client.execute(post);
 			HttpEntity resEntity = response.getEntity();
 			responseString = EntityUtils.toString(resEntity, "UTF-8");
+			responseString = responseString.replaceAll("\"", "");
+			arr = responseString.split(",");
 
 			LOG.info("Generate Caption received : [{}]", responseString);
 
@@ -127,7 +130,8 @@ public class ImageCaptionGenerateProcess implements WorkflowProcess {
 			LOG.error("Generate Caption Failed with exception", e);
 		}
 
-		return responseString;
+		return arr;
+
 	}
 
 	private File createTempFileFromStream(InputStream is, String name) {
@@ -201,5 +205,6 @@ public class ImageCaptionGenerateProcess implements WorkflowProcess {
 
 		return asset;
 	}
+
 
 }
