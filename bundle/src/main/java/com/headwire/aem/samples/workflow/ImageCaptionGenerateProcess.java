@@ -64,7 +64,7 @@ public class ImageCaptionGenerateProcess implements WorkflowProcess {
 			String[] captions = generateCaption(asset);
 
 			//Add Captions to JCR Node
-			addToAssetMetadata(asset, wfSession.getSession(), "captions", captions);
+			addToAssetMetadata(asset, wfSession.getSession(), "dam:Captions", captions);
 
 		} catch (Exception e) {
 
