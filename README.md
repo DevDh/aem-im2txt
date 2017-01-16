@@ -60,17 +60,7 @@ WORKFLOW
 
 Configure any existing or new workflows with the additional Process step, either for im2txt caption generate, or Train the model.
 
-1. Train the model:
-For any asset image (any jpeg) 
-
-Example:
-http://localhost:4502/mnt/overlay/dam/gui/content/assets/metadataeditor.html/content/dam/geometrixx-outdoors/articles/12-travel-tips.jpg
-
-Click edit, and add/update the Description.
-Trigger the workflow with 'Im2txt Train Inception Model Step' included, because by default this step is fetching the caption details from 'Description' field only.
-
-
-2. Generate The Image Captions
+1. Generate The Image Captions
 
 Configure the 'Im2txt Image Caption Generate Step' the workflow step with any existing or new workflows for any DAM image operations, and the new workflow instances is already triggered.
 
@@ -97,6 +87,19 @@ You should see the 'Im2txt Generated Captions' in the asset metadata.
 Example:
 ![Alt text](https://github.com/DevDh/aem-im2txt/blob/master/screenshots/gencap1.png "Generated Captions")
 
+
+2. 
+Train the model:
+For any asset image (any jpeg) 
+
+Example:
+http://localhost:4502/mnt/overlay/dam/gui/content/assets/metadataeditor.html/content/dam/geometrixx-outdoors/articles/12-travel-tips.jpg
+
+Click edit, and add/update the Description.
+Trigger the workflow with 'Im2txt Train Inception Model Step' included, because by default this step is fetching the caption details from 'Description' field only.
+
+Example:
+![Alt text](https://github.com/DevDh/aem-im2txt/blob/master/screenshots/trncap.png "Training")
 
 
 INFO
