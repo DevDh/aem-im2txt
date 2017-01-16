@@ -95,7 +95,7 @@ http://localhost:4502/mnt/overlay/dam/gui/content/assets/metadataeditor.html/con
 You should see the 'Im2txt Generated Captions' in the asset metadata.
 
 Example:
-![Alt text](https://github.com/DevDh/aem-im2txt/blob/master/screenshots/gencap1.png?raw=true "Optional Title")
+<a href="url"><img src="https://github.com/DevDh/aem-im2txt/blob/master/screenshots/gencap1.png" align="left" height="70" width="70" ></a>
 
 
 INFO
