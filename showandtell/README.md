@@ -24,7 +24,7 @@ From the showandtell directory, add the following files accordingly:
 
 2. Run the following command:
 
-        python image_generator_rest.py
+        python image_rest.py
     
     In my case, the above command resulted like:
          
@@ -33,7 +33,32 @@ From the showandtell directory, add the following files accordingly:
          * Debugger is active!
          * Debugger pin code: 164-368-744
          
-   It means the Rest api can be accessed using http://0.0.0.0:5000/. This is what we will configure in AEM Config Service.       
+   It means the Rest api can be accessed using http://0.0.0.0:5000/. This is what we will configure in AEM Config Service.   
+       
+       
+REST CLIENT  
+============
+
+1. To Process the image to generate the captions and send it to the following URI:
+
+http://0.0.0.0:5000/im2txt
+
+POST Request with the form containing image + text(captions)
+
+Add to the request headers
+
+    enctype : multipart/form-data
+    
+
+2. To train the Im2txt Inception model with the image + captions and send it to the following URI:
+ 
+http://0.0.0.0:5000/train
+ 
+ POST request with the form containing the image + text
+ 
+ Add to the request headers
+ 
+     enctype : multipart/form-data
      
 INFO
 =====

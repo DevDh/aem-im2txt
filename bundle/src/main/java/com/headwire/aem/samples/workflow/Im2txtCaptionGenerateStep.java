@@ -37,15 +37,15 @@ import java.util.Map;
 /**
  * Workflow to generate the image captions
  */
-@Component(label = "Image Caption Generate Step", metatype = false, immediate = true)
+@Component(label = "Im2txt Image Caption Generate Step", metatype = false, immediate = true)
 @Properties({
-		@Property(name = Constants.SERVICE_DESCRIPTION, value = "Generate Image Captions Workflow"),
+		@Property(name = Constants.SERVICE_DESCRIPTION, value = "Im2txt Generate Image Captions Step"),
 		@Property(name = Constants.SERVICE_VENDOR, value = "Headwire Inc."),
-		@Property(name = "process.label", value = "Image Caption Generate Step") })
+		@Property(name = "process.label", value = "Im2txt Image Caption Generate Step") })
 @Service(value = WorkflowProcess.class)
-public class ImageCaptionGenerateProcess implements WorkflowProcess {
+public class Im2txtCaptionGenerateStep implements WorkflowProcess {
 
-	private static final Logger LOG = LoggerFactory.getLogger(ImageCaptionGenerateProcess.class);
+	private static final Logger LOG = LoggerFactory.getLogger(Im2txtCaptionGenerateStep.class);
 
 	@Reference
 	private ResourceResolverFactory resolverFactory;
@@ -64,7 +64,7 @@ public class ImageCaptionGenerateProcess implements WorkflowProcess {
 			String[] captions = generateCaption(asset);
 
 			//Add Captions to JCR Node
-			addToAssetMetadata(asset, wfSession.getSession(), "dam:Captions", captions);
+			addToAssetMetadata(asset, wfSession.getSession(), "dam:captions", captions);
 
 		} catch (Exception e) {
 
@@ -101,7 +101,9 @@ public class ImageCaptionGenerateProcess implements WorkflowProcess {
 	public String[] generateCaption(Asset asset) {
 
 		CloseableHttpClient client = HttpClients.createDefault();
-		HttpPost post = new HttpPost(im2txtConfigService.getIm2txtURL());
+
+		String imageProcessEndpoint = im2txtConfigService.getIm2txtURL() + im2txtConfigService.getIm2txtProcessImage();
+		HttpPost post = new HttpPost(imageProcessEndpoint);
 
 		MultipartEntityBuilder builder = MultipartEntityBuilder.create();
 		builder.setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
