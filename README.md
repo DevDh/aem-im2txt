@@ -30,8 +30,8 @@ To setup the im2txt's model, refer the [im2txt README.md](showandtell/README.md)
 BUILD
 ======
 
-mvn clean install -PautoInstallPackage
-mvn clean install -PautoInstallBundle
+    mvn clean install -PautoInstallPackage
+    mvn clean install -PautoInstallBundle
 
 
 CONFIGURE IM2TXT SERVICE
@@ -92,7 +92,7 @@ http://localhost:4502/mnt/overlay/dam/gui/content/assets/metadataeditor.html/con
 You should see the 'Im2txt Generated Captions' in the asset metadata.
 
 Example:
-![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
+![Alt text](https://github.com/DevDh/aem-im2txt/blob/master/screenshots/Screen%20Shot%202017-01-13%20at%202.36.14%20PM.png?raw=true "Optional Title")
 
 
 INFO
