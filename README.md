@@ -51,6 +51,9 @@ Find the service name 'Im2txt Configuration Service'
 
 ** Refer : showandtell/README.md - REST API, for more details where the REST api is running.
 
+![Alt text](https://github.com/DevDh/aem-im2txt/blob/master/screenshots/im2txt-config-service.png?raw=true "Im2txt Configuration Service")
+Refer 
+
 
 WORKFLOW
 =========
@@ -92,7 +95,7 @@ http://localhost:4502/mnt/overlay/dam/gui/content/assets/metadataeditor.html/con
 You should see the 'Im2txt Generated Captions' in the asset metadata.
 
 Example:
-![Alt text](https://github.com/DevDh/aem-im2txt/blob/master/screenshots/Screen%20Shot%202017-01-13%20at%202.36.14%20PM.png?raw=true "Optional Title")
+![Alt text](https://github.com/DevDh/aem-im2txt/blob/master/screenshots/gencap1.png?raw=true "Optional Title")
 
 
 INFO
