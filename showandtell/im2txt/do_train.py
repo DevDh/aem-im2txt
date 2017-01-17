@@ -35,7 +35,7 @@ tf.logging.set_verbosity(tf.logging.INFO)
 
 def train(OUTPUT_DIR):
 
-  FLAGS.input_file_pattern = OUTPUT_DIR + FLAGS.train_file_pattern
+FLAGS.input_file_pattern = OUTPUT_DIR + "/" + FLAGS.train_file_pattern
 
   assert FLAGS.input_file_pattern, "--input_file_pattern is required"
   assert FLAGS.train_dir, "--train_dir is required"

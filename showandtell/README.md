@@ -41,24 +41,24 @@ REST CLIENT
 
 1. To Process the image to generate the captions and send it to the following URI:
 
-http://0.0.0.0:5000/im2txt
+    http://0.0.0.0:5000/im2txt
 
-POST Request with the form containing image + text(captions)
+    POST Request with the form containing image + text(captions)
 
-Add to the request headers
+    Add to the request headers
 
-    enctype : multipart/form-data
+        enctype : multipart/form-data
     
 
 2. To train the Im2txt Inception model with the image + captions and send it to the following URI:
  
-http://0.0.0.0:5000/train
+    http://0.0.0.0:5000/train
  
- POST request with the form containing the image + text
+    POST request with the form containing the image + text
  
- Add to the request headers
+    Add to the request headers
  
-     enctype : multipart/form-data
+        enctype : multipart/form-data
      
 INFO
 =====

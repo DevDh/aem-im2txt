@@ -27,8 +27,8 @@ REST API
 
 To setup the im2txt's model, refer the [im2txt README.md](showandtell/README.md). 
     
-BUILD
-======
+MVN BUILD
+=========
 
     mvn clean install -PautoInstallPackage
     mvn clean install -PautoInstallBundle
@@ -90,7 +90,7 @@ Configure any existing or new workflows with the additional Process step, either
 
 2. 
 Train the model:
-    For any asset image (any jpeg) 
+    For any asset image 
 
     Example:
         
