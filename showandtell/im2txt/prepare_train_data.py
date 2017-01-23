@@ -1,3 +1,7 @@
+# ======================================================
+"""
+"""
+
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
@@ -5,7 +9,6 @@ from __future__ import print_function
 from collections import Counter
 from collections import namedtuple
 from datetime import datetime
-import json
 import os.path
 import random
 import sys
@@ -18,24 +21,9 @@ from os.path import expanduser
 
 HOME = expanduser("~")
 
-
-tf.flags.DEFINE_string("train_image_dir", HOME + "/im2txt/data/mscoco/raw-data/train-dir",
-                       "Training image directory.")
-tf.flags.DEFINE_string("val_image_dir", HOME + "/im2txt/data/mscoco/raw-data/val-dir",
-                       "Validation image directory.")
-
-tf.flags.DEFINE_string("train_captions_file", HOME + "/im2txt/data/mscoco/raw-data/annotations/captions_train2014.json",
-                       "Training captions JSON file.")
-tf.flags.DEFINE_string("val_captions_file", HOME + "/im2txt/data/mscoco/raw-data/annotations/captions_train2014.json",
-                       "Validation captions JSON file.")
-
 tf.flags.DEFINE_string("output_dir", HOME + "/im2txt/data/mscoco", "Output data directory.")
-
 tf.flags.DEFINE_integer("train_shards", 16,
                         "Number of shards in training TFRecord files.")
-tf.flags.DEFINE_integer("val_shards", 16,
-                        "Number of shards in validation TFRecord files.")
-
 tf.flags.DEFINE_string("start_word", "<S>",
                        "Special word added to the beginning of each sentence.")
 tf.flags.DEFINE_string("end_word", "</S>",
